@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Trust Name] - CSR Partnership</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #2c5e8a;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5e8a 0%, #4a7fa6 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: #d62828;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            color: #2c5e8a;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Mission Section */
+        .mission {
+            background-color: #fff;
+        }
+        
+        .mission-content {
+            text-align: center;
+        }
+        
+        /* Impact Cards */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .impact-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* CSR Partnership Section */
+        .csr-section {
+            background: linear-gradient(135deg, #2c5e8a 0%, #4a7fa6 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .csr-section .section-title {
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c5e8a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">[Your Trust Name]</a>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#impact">Impact Areas</a></li>
+                <li><a href="#csr" class="cta-button" style="padding: 0.5rem 1.5rem;">Partner With Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Making a Difference Together</h1>
+        <p>We're committed to creating sustainable social impact through community development, education, and environmental conservation.</p>
+        <a href="#csr" class="cta-button">Become Our CSR Partner</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-grid">
+            <div>
+                <p><strong>Sri Balakrishna Charitable Trust</strong> is a registered charitable trust dedicated to improving lives through meaningful community initiatives. Operating in Bangalore, we work tirelessly to empower communities, support education, and promote environmental sustainability.</p>
+                <br>
+                <p>Our mission extends beyond charity - we build lasting partnerships with organizations and individuals who share our vision of a better world.</p>
+            </div>
+            <!-- Add your organization image here -->
+            <div style="background: #e0e0e0; height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <span style="color: #666;">[Insert Organization Image Here]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="mission-content">
+            <p>We believe in creating measurable, sustainable impact through:</p>
+            <br>
+            <ul style="list-style: none; text-align: left; max-width: 600px; margin: 0 auto;">
+                <li style="margin-bottom: 1rem;">✅ Empowering communities with access to quality education</li>
+                <li style="margin-bottom: 1rem;">✅ Supporting healthcare initiatives for underserved populations</li>
+                <li style="margin-bottom: 1rem;">✅ Promoting environmental conservation and sustainability</li>
+                <li style="margin-bottom: 1rem;">✅ Building infrastructure that serves vulnerable communities</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Impact Areas Section -->
+    <section id="impact">
+        <h2 class="section-title">Our Impact Areas</h2>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon">📚</div>
+                <h3>Education Support</h3>
+                <p>Providing scholarships, learning materials, and educational infrastructure to underprivileged children.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">💧</div>
+                <h3>Water & Sanitation</h3>
+                <p>Building clean water access and sanitation facilities in rural communities.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">🌱</div>
+                <h3>Environmental Conservation</h3>
+                <p>Promoting sustainable practices, tree planting, and waste management initiatives.</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-icon">❤️</div>
+                <h3>Healthcare Support</h3>
+                <p>Providing medical aid, healthcare infrastructure, and support for vulnerable families.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSR Partnership Section -->
+    <section class="csr-section" id="csr">
+        <h2 class="section-title">CSR Partnership Opportunities</h2>
+        <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 2rem;">
+            We're seeking corporate partners who want to make a tangible difference in our communities. Your contribution can transform lives and create lasting social impact.
+        </p>
+        
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#contact" class="cta-button">Request Proposal</a>
+            <a href="#impact" class="cta-button" style="background: white; color: #2c5e8a;">View Our Projects</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p><strong>Email:</strong> [your-email@example.com]</p>
+            <br>
+            <p><strong>Phone:</strong> [+91 XXXX XXXXX]</p>
+            <br>
+            <p><strong>Address:</strong> [Your Full Address Here]</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 [Your Trust Name]. All Rights Reserved.</p>
+            <p style="margin-top: 1rem;">Registered under [Registration Number]</p>
+        </div>
+    </footer>
+</body>
+</html>
