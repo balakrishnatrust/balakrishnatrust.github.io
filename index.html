@@ -3,22 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Balakrishna Charitable Trust - CSR Partnership</title>
+    <title>Sri Balakrishna Charitable Trust | Corporate Social Responsibility (CSR) Partner</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        :root {
+            --primary: #1e3d59;
+            --secondary: #17b978;
+            --dark: #111e25;
+            --light: #f5f7fa;
+            --accent: #ff6f3c;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            padding-top: 70px; /* Prevents fixed nav from overlapping Hero content */
+            color: var(--dark);
+            background-color: #ffffff;
+            padding-top: 80px;
         }
         
+        /* Compliance Banner */
+        .compliance-bar {
+            background: var(--dark);
+            color: #fff;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .compliance-bar span {
+            color: var(--secondary);
+            margin: 0 10px;
+        }
+
         /* Navigation */
         nav {
-            background: #2c5e8a;
-            padding: 1rem 0;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
@@ -32,21 +56,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0.8rem 2rem;
         }
         
         .logo {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        .logo img {
-            max-height: 40px;
-            width: auto;
+        .logo-text h1 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         nav ul {
@@ -57,262 +88,705 @@
         }
         
         nav a {
-            color: white;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
         
         nav a:hover {
-            opacity: 0.8;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #2c5e8a 0%, #4a7fa6 100%);
-            color: white;
-            padding: 6rem 2rem 6rem;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
+            color: var(--secondary);
         }
         
         .cta-button {
             display: inline-block;
-            background: #e63946;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 5px;
+            background: var(--accent);
+            color: white !important;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .cta-button:hover {
+            background: #e55a2b;
             transform: translateY(-2px);
-            background: #d62828;
+            box-shadow: 0 4px 12px rgba(255, 111, 60, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white !important;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary) !important;
         }
         
-        /* Sections */
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 61, 89, 0.9), rgba(17, 30, 37, 0.95)), url('hero-bg.jpg') center/cover;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Metric Dashboard Tracker */
+        .metrics-bar {
+            background: var(--light);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .metrics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-card p {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* General Section Layout */
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.25rem;
-            color: #2c5e8a;
-            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        /* About Section */
+        /* About & Governance Grid */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .compliance-list {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .compliance-list h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .compliance-item {
+            display: flex;
             align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
-        .about-image-wrapper {
-            background: #e0e0e0; 
-            height: 300px; 
-            border-radius: 8px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
+        .badge-check {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Targeted CSR Project Pillars */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ed;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
-        .about-image-wrapper img {
+        .project-img {
+            height: 200px;
+            background: #ddd;
             width: 100%;
-            height: 100%;
             object-fit: cover;
         }
         
-        /* Mission Section */
-        .mission {
-            background-color: #fff;
-            max-width: 100%;
-            width: 100%;
-        }
-
-        .mission-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .mission-content {
-            text-align: center;
-        }
-        
-        /* Impact Cards */
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .impact-card {
-            background: white;
-            border-radius: 8px;
+        .project-body {
             padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid #eee;
         }
-        
-        .impact-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .impact-icon {
-            font-size: 3rem;
+
+        .project-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .project-body h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .sdg-tag {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 0.75rem;
+            font-weight: 500;
         }
         
-        /* CSR Partnership Section */
-        .csr-section-wrapper {
-            background: linear-gradient(135deg, #2c5e8a 0%, #4a7fa6 100%);
+        /* Structured Partner CTA Block */
+        .csr-wrapper {
+            background: var(--light);
             width: 100%;
         }
 
-        .csr-section {
-            color: white;
-            text-align: center;
-        }
-        
-        .csr-section .section-title {
-            color: white;
+        .csr-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .csr-text {
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.15rem;
-            opacity: 0.95;
+        .csr-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
         }
         
-        /* Footer */
+        /* Institutional Footer */
         footer {
-            background: #1a3b58;
+            background: var(--dark);
             color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+            padding: 4rem 2rem 2rem;
+            font-size: 0.9rem;
         }
         
-        .footer-content {
+        .footer-grid {
             max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+            border-bottom: 1px solid #2c3e50;
+            padding-bottom: 3rem;
         }
 
-        .footer-content p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-            margin-top: 1rem;
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            color: #a0aec0;
+            font-size: 0.8rem;
         }
         
         /* Responsive CSS */
-        @media (max-width: 768px) {
-            body { padding-top: 120px; }
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0.5rem;
-            }
-            nav ul { gap: 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            section { padding: 3rem 1.5rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Balakrishna Charitable Trust | Corporate Social Responsibility (CSR) Partner</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #1e3d59;
+            --secondary: #17b978;
+            --dark: #111e25;
+            --light: #f5f7fa;
+            --accent: #ff6f3c;
         }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <!-- Swapped plain text placeholder with structured image logo setup -->
-                <img src="logo.png" alt="Sri Balakrishna Charitable Trust Logo" width="180" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span style="display:none;">Sri Balakrishna Charitable Trust</span>
-            </a>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#mission">Our Mission</a></li>
-                <li><a href="#impact">Impact Areas</a></li>
-                <li><a href="#csr" class="cta-button" style="padding: 0.5rem 1.5rem;">Partner With Us</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Making a Difference Together</h1>
-        <p>We're committed to creating sustainable social impact through community development, education, and environmental conservation.</p>
-        <a href="#csr" class="cta-button">Become Our CSR Partner</a>
-    </section>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #ffffff;
+            padding-top: 80px;
+        }
+        
+        /* Compliance Banner */
+        .compliance-bar {
+            background: var(--dark);
+            color: #fff;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Us</h2>
-        <div class="about-grid">
-            <div>
-                <p><strong>Sri Balakrishna Charitable Trust</strong> is a registered charitable trust dedicated to improving lives through meaningful community initiatives. Operating in Bangalore, we work tirelessly to empower communities, support education, and promote environmental sustainability.</p>
-                <br>
-                <p>Our mission extends beyond charity - we build lasting partnerships with organizations and individuals who share our vision of a better world.</p>
-            </div>
-            <div class="about-image-wrapper">
-                <img src="sribalakrishnacharitabletrust.jpg" alt="Sri Balakrishna Charitable Trust Community Project Blueprint" loading="lazy">
-            </div>
-        </div>
-    </section>
+        .compliance-bar span {
+            color: var(--secondary);
+            margin: 0 10px;
+        }
 
-    <!-- Mission Section -->
-    <div class="mission">
-        <section class="mission-inner" id="mission">
-            <h2 class="section-title">Our Mission</h2>
-            <div class="mission-content">
-                <p>We believe in creating measurable, sustainable impact through:</p>
-                <br>
-                <ul style="list-style: none; text-align: left; max-width: 600px; margin: 0 auto;">
-                    <li style="margin-bottom: 1rem;">✅ Empowering communities with access to quality education</li>
-                    <li style="margin-bottom: 1rem;">✅ Supporting healthcare initiatives for underserved populations</li>
-                    <li style="margin-bottom: 1rem;">✅ Promoting environmental conservation and sustainability</li>
-                    <li style="margin-bottom: 1rem;">✅ Building infrastructure that serves vulnerable communities</li>
-                </ul>
-            </div>
-        </section>
-    </div>
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    <!-- Impact Areas Section -->
-    <section id="impact">
-        <h2 class="section-title">Our Impact Areas</h2>
-        <div class="impact-grid">
-            <div class="impact-card">
-                <div class="impact-icon">📚</div>
-                <h3>Education Support</h3>
-                <p>Providing scholarships, learning materials, and educational infrastructure to underprivileged children.</p>
-            </div>
-            <div class="impact-card">
-                <div class="impact-icon">💧</div>
-                <h3>Water & Sanitation</h3>
-                <p>Building clean water access and sanitation facilities in rural communities.</p>
-            </div>
-            <div class="impact-card">
-                <div class="impact-icon">🌱</div>
-                <h3>Environmental Conservation</h3>
-                <p>Promoting sustainable green coverage, waste recycling initiatives, and community afforestation programs.</p>
-            </div>
-        </div>
+        .logo-text h1 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white !important;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 111, 60, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white !important;
+            border: 2px solid white;
+            margin-left: 10px;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 61, 89, 0.9), rgba(17, 30, 37, 0.95)), url('hero-bg.jpg') center/cover;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Metric Dashboard Tracker */
+        .metrics-bar {
+            background: var(--light);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .metrics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-card p {
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* General Section Layout */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About & Governance Grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .compliance-list {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .compliance-list h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .badge-check {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Targeted CSR Project Pillars */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ed;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            background: #ddd;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .project-body h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .sdg-tag {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 1rem;
+            border-top: 1px solid #eee;
+            padding-top: 0.75rem;
+            font-weight: 500;
+        }
+        
+        /* Structured Partner CTA Block */
+        .csr-wrapper {
+            background: var(--light);
+            width: 100%;
+        }
+
+        .csr-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .csr-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        /* Institutional Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+            border-bottom: 1px solid #2c3e50;
+            padding-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: #a0aec0;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            color: #a0aec0;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive CSS */
