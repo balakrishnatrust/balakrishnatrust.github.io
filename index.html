@@ -245,7 +245,21 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <!-- Swapped plain text placeholder with structured image logo setup -->
-                <img src="logo.png" alt="Sri Balakrishna Charitable Trust Logo" width="185" height="180" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="logo.png" alt="Sri Balakrishna Charitable Trust Logo" /* Update your wrapper styles to remove fixed height limits */
+.about-image-wrapper {
+    background: #e0e0e0; 
+    width: 100%; /* Spans full grid column width */
+    height: auto; /* Changed from 300px */
+    border-radius: 8px; 
+    overflow: hidden;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: auto; /* Changed from 100% */
+    display: block;
+}>
+
                 <span style="display:none;">Sri Balakrishna Charitable Trust</span>
             </a>
             <ul>
