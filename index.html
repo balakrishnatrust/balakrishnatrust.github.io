@@ -9,16 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy: #14233F;
-    --navy-deep: #0C1830;
-    --gold: #C6912B;
-    --gold-light: #E4B85C;
-    --paper: #FBF7EF;
-    --paper-dim: #F1EADB;
-    --maroon: #8A3A34;
-    --ink: #2A2A28;
-    --ink-soft: #5B5A54;
-    --line: rgba(20,35,63,0.12);
+    --blue: #114896;
+    --blue-deep: #0C3269;
+    --gold: #DAB04B;
+    --gold-deep: #B8862E;
+    --paper: #FEFDFB;
+    --paper-dim: #F3EEE3;
+    --maroon: #76251F;
+    --maroon-deep: #5A1B16;
+    --ink: #22262B;
+    --ink-soft: #5B5F66;
+    --line: rgba(17,72,150,0.14);
   }
 
   *{ margin:0; padding:0; box-sizing:border-box; }
@@ -36,7 +37,7 @@
   h1,h2,h3{
     font-family:'Fraunces', serif;
     font-weight:600;
-    color:var(--navy);
+    color:var(--blue);
     letter-spacing:-0.01em;
   }
 
@@ -44,13 +45,14 @@
 
   /* ---------- Nav ---------- */
   nav{
-    background:var(--navy-deep);
+    background:var(--paper);
     padding:0.9rem 0;
     position:fixed;
     width:100%;
     top:0; left:0;
     z-index:1000;
-    border-bottom:1px solid rgba(230,200,140,0.15);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 2px 12px rgba(17,72,150,0.06);
   }
 
   .nav-container{
@@ -63,7 +65,7 @@
   }
 
   .logo{
-    color:var(--paper);
+    color:var(--blue-deep);
     font-family:'Fraunces', serif;
     font-size:1.08rem;
     font-weight:600;
@@ -79,14 +81,11 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    background:var(--paper);
-    border:1.5px solid var(--gold);
-    box-shadow:0 2px 8px rgba(0,0,0,0.28);
+    width:44px;
+    height:44px;
+    filter:drop-shadow(0 1px 1px rgba(17,72,150,0.15));
   }
-  .logo-mark img{ display:block; height:34px; width:34px; object-fit:contain; }
+  .logo-mark img{ display:block; height:44px; width:44px; object-fit:contain; }
 
   .brand-mark{ flex:none; display:block; }
 
@@ -98,20 +97,20 @@
   }
 
   nav a{
-    color:var(--paper);
+    color:var(--blue-deep);
     text-decoration:none;
     font-weight:500;
     font-size:0.95rem;
-    opacity:0.88;
-    transition:opacity 0.25s;
+    opacity:0.82;
+    transition:opacity 0.25s, color 0.25s;
   }
 
-  nav a:hover{ opacity:1; }
+  nav a:hover{ opacity:1; color:var(--maroon); }
 
   .cta-button{
     display:inline-block;
-    background:var(--gold);
-    color:var(--navy-deep) !important;
+    background:var(--maroon);
+    color:#fff !important;
     padding:0.85rem 2.2rem;
     border-radius:2px;
     text-decoration:none;
@@ -121,7 +120,7 @@
     opacity:1 !important;
   }
 
-  .cta-button:hover{ background:var(--gold-light); transform:translateY(-2px); }
+  .cta-button:hover{ background:var(--maroon-deep); transform:translateY(-2px); }
 
   nav .cta-button{ padding:0.6rem 1.5rem; font-size:0.9rem; }
 
@@ -129,7 +128,7 @@
   .hero{
     background:
       radial-gradient(circle at 15% 20%, rgba(198,145,43,0.18), transparent 45%),
-      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
+      linear-gradient(160deg, var(--blue-deep) 0%, var(--blue) 100%);
     color:var(--paper);
     padding:7rem 2rem 6.5rem;
     text-align:center;
@@ -150,7 +149,7 @@
     text-transform:uppercase;
     letter-spacing:0.22em;
     font-size:0.78rem;
-    color:var(--gold-light);
+    color:var(--gold);
     font-weight:600;
     margin-bottom:1.4rem;
   }
@@ -193,7 +192,7 @@
   .section-title{
     text-align:center;
     font-size:2.2rem;
-    color:var(--navy);
+    color:var(--blue);
     margin-bottom:3rem;
   }
 
@@ -206,7 +205,7 @@
   }
 
   .about-grid p{ color:var(--ink-soft); margin-bottom:1rem; }
-  .about-grid p strong{ color:var(--navy); }
+  .about-grid p strong{ color:var(--blue); }
 
   .about-image-wrapper{
     background:var(--paper-dim);
@@ -227,7 +226,7 @@
   }
 
   .about-image-wrapper.about-seal{
-    background:linear-gradient(160deg, #ffffff 0%, var(--paper-dim) 100%);
+    background:#ffffff;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -241,7 +240,7 @@
     inset:18px;
     border:1.5px solid var(--gold);
     border-radius:50%;
-    opacity:0.55;
+    opacity:0.4;
   }
 
   .about-seal img{
@@ -249,7 +248,7 @@
     height:auto;
     object-fit:contain;
     position:relative;
-    filter:drop-shadow(0 8px 18px rgba(20,35,63,0.18));
+    filter:drop-shadow(0 6px 14px rgba(17,72,150,0.12));
   }
 
   /* ---------- Trust Photo ---------- */
@@ -309,7 +308,7 @@
     width:26px; height:26px;
     border-radius:50%;
     background:var(--gold);
-    color:var(--navy-deep);
+    color:var(--blue-deep);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -328,7 +327,7 @@
   .reg-card{
     background:#fff;
     border:1px solid var(--line);
-    border-top:3px solid var(--navy);
+    border-top:3px solid var(--blue);
     border-radius:6px;
     padding:2rem 2.2rem;
   }
@@ -356,7 +355,7 @@
     font-weight:600;
     font-size:0.92rem;
     text-align:right;
-    color:var(--navy);
+    color:var(--blue);
   }
 
   .leadership{
@@ -406,7 +405,7 @@
   .leader-card .name{
     font-family:'Fraunces', serif;
     font-size:1.05rem;
-    color:var(--navy);
+    color:var(--blue);
   }
 
   .members-row{
@@ -438,7 +437,7 @@
     border-radius:5px;
     padding:0.6rem 1.1rem;
     font-size:0.9rem;
-    color:var(--navy);
+    color:var(--blue);
     font-weight:500;
     white-space:nowrap;
   }
@@ -492,7 +491,7 @@
     border-radius:50%;
     border:1px solid var(--line);
     background:#fff;
-    color:var(--navy);
+    color:var(--blue);
     font-size:1.4rem;
     line-height:1;
     cursor:pointer;
@@ -502,7 +501,7 @@
     transition:background 0.2s, color 0.2s;
   }
 
-  .modal-close:hover{ background:var(--navy); color:#fff; }
+  .modal-close:hover{ background:var(--blue); color:#fff; }
 
   .modal-card .leadership-grid{ margin-bottom:1.8rem; }
 
@@ -547,12 +546,12 @@
   .csr-section-wrapper{
     background:
       radial-gradient(circle at 85% 30%, rgba(198,145,43,0.16), transparent 50%),
-      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
+      linear-gradient(160deg, var(--blue-deep) 0%, var(--blue) 100%);
     width:100%;
   }
 
   .csr-section{ color:#fff; text-align:center; }
-  .csr-section .eyebrow-small{ color:var(--gold-light); }
+  .csr-section .eyebrow-small{ color:var(--gold); }
   .csr-section .section-title{ color:#fff; }
 
   .csr-text{
@@ -571,12 +570,12 @@
   }
 
   .csr-stats div{ border-left:1px solid rgba(230,200,140,0.25); padding-left:1.2rem; text-align:left; }
-  .csr-stats .num{ font-family:'Fraunces', serif; font-size:2.1rem; color:var(--gold-light); display:block; }
+  .csr-stats .num{ font-family:'Fraunces', serif; font-size:2.1rem; color:var(--gold); display:block; }
   .csr-stats .label{ font-size:0.85rem; color:rgba(251,247,239,0.7); }
 
   /* ---------- Footer ---------- */
   footer{
-    background:var(--navy-deep);
+    background:var(--blue-deep);
     color:var(--paper);
     padding:3.5rem 2rem 2.5rem;
     text-align:center;
@@ -588,7 +587,7 @@
   .footer-content .footer-name{
     font-family:'Fraunces', serif;
     font-size:1.15rem;
-    color:var(--gold-light);
+    color:var(--gold);
     margin-bottom:0.6rem;
   }
 
@@ -606,7 +605,7 @@
     font-size:0.92rem;
   }
 
-  .footer-links a:hover{ color:var(--gold-light); }
+  .footer-links a:hover{ color:var(--gold); }
 
   .footer-content p.fine{
     opacity:0.55;
