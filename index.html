@@ -74,8 +74,19 @@
     letter-spacing:0.01em;
   }
 
-  .logo-mark{ flex:none; display:flex; align-items:center; justify-content:center; }
-  .logo-mark img{ display:block; height:40px; width:40px; object-fit:contain; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35)); }
+  .logo-mark{
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--paper);
+    border:1.5px solid var(--gold);
+    box-shadow:0 2px 8px rgba(0,0,0,0.28);
+  }
+  .logo-mark img{ display:block; height:34px; width:34px; object-fit:contain; }
 
   .brand-mark{ flex:none; display:block; }
 
@@ -216,17 +227,29 @@
   }
 
   .about-image-wrapper.about-seal{
-    background:var(--navy-deep);
+    background:linear-gradient(160deg, #ffffff 0%, var(--paper-dim) 100%);
     display:flex;
     align-items:center;
     justify-content:center;
     padding:2.4rem;
+    position:relative;
+  }
+
+  .about-image-wrapper.about-seal::before{
+    content:"";
+    position:absolute;
+    inset:18px;
+    border:1.5px solid var(--gold);
+    border-radius:50%;
+    opacity:0.55;
   }
 
   .about-seal img{
-    width:72%;
+    width:62%;
     height:auto;
     object-fit:contain;
+    position:relative;
+    filter:drop-shadow(0 8px 18px rgba(20,35,63,0.18));
   }
 
   /* ---------- Trust Photo ---------- */
@@ -418,6 +441,13 @@
     color:var(--navy);
     font-weight:500;
     white-space:nowrap;
+  }
+
+  .member-chip.member-chip-long{
+    white-space:normal;
+    max-width:340px;
+    text-align:center;
+    line-height:1.5;
   }
 
   /* ---------- Modals ---------- */
@@ -770,7 +800,7 @@
         <div class="members-grid">
           <span class="member-chip">Smt. Prasanna</span>
           <span class="member-chip">Sri Rathna Kumar Aleti</span>
-          <span class="member-chip">Kumari Namratha Balarama Reddy</span>
+          <span class="member-chip member-chip-long">Smt. Nagajyoti Raghunath Siriyala Kumari Namratha Balarama Reddy</span>
         </div>
       </div>
     </div>
