@@ -74,8 +74,8 @@
     letter-spacing:0.01em;
   }
 
-  .logo-mark{ flex:none; display:block; }
-  .logo-mark svg{ display:block; height:42px; width:42px; }
+  .logo-mark{ flex:none; display:flex; align-items:center; justify-content:center; }
+  .logo-mark img{ display:block; height:40px; width:40px; object-fit:contain; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35)); }
 
   .brand-mark{ flex:none; display:block; }
 
@@ -212,6 +212,42 @@
     height:100%;
     object-fit:cover;
     object-position:center;
+    display:block;
+  }
+
+  .about-image-wrapper.about-seal{
+    background:var(--navy-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2.4rem;
+  }
+
+  .about-seal img{
+    width:72%;
+    height:auto;
+    object-fit:contain;
+  }
+
+  /* ---------- Trust Photo ---------- */
+  .trust-photo-section{
+    padding-top:0;
+    padding-bottom:0;
+    margin-bottom:5.5rem;
+  }
+
+  .trust-photo-frame{
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 18px 40px -22px rgba(20,35,63,0.3);
+  }
+
+  .trust-photo-frame img{
+    width:100%;
+    height:auto;
+    max-height:520px;
+    object-fit:cover;
     display:block;
   }
 
@@ -362,14 +398,26 @@
     text-transform:uppercase;
     letter-spacing:0.08em;
     color:var(--ink-soft);
-    margin-bottom:0.5rem;
+    margin-bottom:0.9rem;
     font-weight:600;
   }
 
-  .members-list{
-    color:var(--ink);
-    font-size:0.92rem;
-    line-height:1.9;
+  .members-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:0.7rem;
+  }
+
+  .member-chip{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:0.6rem 1.1rem;
+    font-size:0.9rem;
+    color:var(--navy);
+    font-weight:500;
+    white-space:nowrap;
   }
 
   /* ---------- Modals ---------- */
@@ -556,13 +604,7 @@
     <div class="nav-container">
       <a href="#" class="logo">
         <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="50,8 92,86 8,86" fill="none" stroke="#C6912B" stroke-width="4" stroke-linejoin="round"/>
-            <circle cx="50" cy="58" r="20" fill="#C6912B"/>
-            <circle cx="50" cy="58" r="20" fill="none" stroke="#14233F" stroke-width="1.5"/>
-            <path d="M50 44 C53 50 53 54 50 57 C47 54 47 50 50 44Z" fill="#8A3A34"/>
-            <path d="M38 60 Q50 70 62 60 Q58 66 50 66 Q42 66 38 60Z" fill="#14233F"/>
-          </svg>
+          <img src="logo.png" alt="Sri Bala-krishna Charitable Trust logo" onerror="this.style.display='none';" />
         </span>
         <span>Sri Bala-krishna Charitable Trust</span>
       </a>
@@ -594,25 +636,18 @@
         <p><strong>Sri Bala-krishna Charitable Trust (Regd.)</strong> is a registered charitable trust founded in 2013 and based at Cox Town, Bengaluru. The trust was established with a vision to empower communities, support education, and promote environmental sustainability.</p>
         <p>Our mission extends beyond charity — we build lasting partnerships with organizations and individuals who share our vision of a better world.</p>
       </div>
-      <div class="about-image-wrapper" style="background:var(--navy-deep); display:flex; align-items:center; justify-content:center; padding:2rem;">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:78%; height:auto;">
-          <circle cx="100" cy="100" r="92" fill="none" stroke="#E4B85C" stroke-width="1.5"/>
-          <polygon points="100,20 176,168 24,168" fill="none" stroke="#E4B85C" stroke-width="2.5" stroke-linejoin="round"/>
-          <circle cx="100" cy="112" r="34" fill="#C6912B"/>
-          <circle cx="100" cy="112" r="34" fill="none" stroke="#14233F" stroke-width="2"/>
-          <path d="M100 84 C107 96 107 104 100 110 C93 104 93 96 100 84Z" fill="#8A3A34"/>
-          <path d="M76 116 Q100 136 124 116 Q116 128 100 128 Q84 128 76 116Z" fill="#14233F"/>
-          <path id="arcTopAbout" d="M 20,100 A 80 80 0 1 1 180,100" fill="none"/>
-          <text font-family="Fraunces, serif" font-size="12.5" font-weight="600" fill="#FBF7EF" letter-spacing="1.8">
-            <textPath href="#arcTopAbout" startOffset="50%" text-anchor="middle">SRI BALA-KRISHNA CHARITABLE TRUST</textPath>
-          </text>
-          <text x="100" y="182" font-family="Work Sans, sans-serif" font-size="10" font-weight="600" fill="#E4B85C" text-anchor="middle" letter-spacing="1.5">(REGD.) · EST. 2013</text>
-        </svg>
+      <div class="about-image-wrapper about-seal">
+        <img src="logo.png" alt="Sri Bala-krishna Charitable Trust emblem" onerror="this.style.display='none';" />
       </div>
     </div>
   </section>
 
-
+  <!-- Trust Photo -->
+  <section id="trust-photo" class="trust-photo-section">
+    <div class="trust-photo-frame">
+      <img src="sribalakrishnacharitabletrust.jpg" alt="Sri Bala-krishna Charitable Trust" loading="lazy">
+    </div>
+  </section>
 
   <!-- Mission -->
   <div class="mission">
@@ -732,7 +767,11 @@
       </div>
       <div class="members-row">
         <span class="members-label">Members</span>
-        <span class="members-list">Smt. Prasanna · Sri Rathna Kumar Aleti · Smt. Nagajyoti Raghunath Siriyala · Kumari Namratha Balarama Reddy</span>
+        <div class="members-grid">
+          <span class="member-chip">Smt. Prasanna</span>
+          <span class="member-chip">Sri Rathna Kumar Aleti</span>
+          <span class="member-chip">Kumari Namratha Balarama Reddy</span>
+        </div>
       </div>
     </div>
   </div>
