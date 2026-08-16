@@ -1,332 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Balakrishna Charitable Trust - CSR Partnership</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            padding-top: 70px; /* Prevents fixed nav from overlapping Hero content */
-        }
-        
-        /* Navigation */
-        nav {
-            background: #2c5e8a;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Bala-krishna Charitable Trust (Regd.) — CSR Partnership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #14233F;
+    --navy-deep: #0C1830;
+    --gold: #C6912B;
+    --gold-light: #E4B85C;
+    --paper: #FBF7EF;
+    --paper-dim: #F1EADB;
+    --maroon: #8A3A34;
+    --ink: #2A2A28;
+    --ink-soft: #5B5A54;
+    --line: rgba(20,35,63,0.12);
+  }
 
-        .logo img {
-            max-height: 40px;
-            width: auto;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-        
-        nav a:hover {
-            opacity: 0.8;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #2c5e8a 0%, #4a7fa6 100%);
-            color: white;
-            padding: 6rem 2rem 6rem;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #e63946;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            background: #d62828;
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.25rem;
-            color: #2c5e8a;
-            margin-bottom: 3rem;
-        }
-        
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
+  *{ margin:0; padding:0; box-sizing:border-box; }
 
-        .about-image-wrapper {
-            background: #e0e0e0; 
-            height: 300px; 
-            border-radius: 8px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            overflow: hidden;
-        }
+  html{ scroll-behavior:smooth; }
 
-        .about-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Mission Section */
-        .mission {
-            background-color: #fff;
-            max-width: 100%;
-            width: 100%;
-        }
+  body{
+    font-family:'Work Sans', sans-serif;
+    line-height:1.7;
+    color:var(--ink);
+    background-color:var(--paper);
+    padding-top:76px;
+  }
 
-        .mission-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .mission-content {
-            text-align: center;
-        }
-        
-        /* Impact Cards */
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .impact-card {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-            border: 1px solid #eee;
-        }
-        
-        .impact-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .impact-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* CSR Partnership Section */
-        .csr-section-wrapper {
-            background: linear-gradient(135deg, #2c5e8a 0%, #4a7fa6 100%);
-            width: 100%;
-        }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
 
-        .csr-section {
-            color: white;
-            text-align: center;
-        }
-        
-        .csr-section .section-title {
-            color: white;
-        }
+  a{ color:inherit; }
 
-        .csr-text {
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.15rem;
-            opacity: 0.95;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a3b58;
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* ---------- Nav ---------- */
+  nav{
+    background:var(--navy-deep);
+    padding:0.9rem 0;
+    position:fixed;
+    width:100%;
+    top:0; left:0;
+    z-index:1000;
+    border-bottom:1px solid rgba(230,200,140,0.15);
+  }
 
-        .footer-content p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-        
-        /* Responsive CSS */
-        @media (max-width: 768px) {
-            body { padding-top: 120px; }
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0.5rem;
-            }
-            nav ul { gap: 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            section { padding: 3rem 1.5rem; }
-        }
-    </style>
+  .nav-container{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 2rem;
+  }
+
+  .logo{
+    color:var(--paper);
+    font-family:'Fraunces', serif;
+    font-size:1.08rem;
+    font-weight:600;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:0.7rem;
+    letter-spacing:0.01em;
+  }
+
+  .logo-mark{ flex:none; display:block; }
+  .logo-mark svg{ display:block; height:42px; width:42px; }
+
+  .brand-mark{ flex:none; display:block; }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:2.2rem;
+    align-items:center;
+  }
+
+  nav a{
+    color:var(--paper);
+    text-decoration:none;
+    font-weight:500;
+    font-size:0.95rem;
+    opacity:0.88;
+    transition:opacity 0.25s;
+  }
+
+  nav a:hover{ opacity:1; }
+
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy-deep) !important;
+    padding:0.85rem 2.2rem;
+    border-radius:2px;
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:0.02em;
+    transition:background 0.25s, transform 0.25s;
+    opacity:1 !important;
+  }
+
+  .cta-button:hover{ background:var(--gold-light); transform:translateY(-2px); }
+
+  nav .cta-button{ padding:0.6rem 1.5rem; font-size:0.9rem; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(198,145,43,0.18), transparent 45%),
+      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
+    color:var(--paper);
+    padding:7rem 2rem 6.5rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:50%; bottom:-1px;
+    transform:translateX(-50%);
+    width:120px; height:3px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .hero .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.22em;
+    font-size:0.78rem;
+    color:var(--gold-light);
+    font-weight:600;
+    margin-bottom:1.4rem;
+  }
+
+  .hero h1{
+    font-size:3.1rem;
+    color:#fff;
+    margin-bottom:1.2rem;
+    max-width:780px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.15;
+  }
+
+  .hero p{
+    font-size:1.15rem;
+    max-width:640px;
+    margin:0 auto 2.4rem;
+    color:rgba(251,247,239,0.82);
+  }
+
+  /* ---------- Sections ---------- */
+  section{
+    padding:5.5rem 2rem;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  .eyebrow-small{
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.75rem;
+    color:var(--gold);
+    font-weight:600;
+    display:block;
+    margin-bottom:0.7rem;
+    text-align:center;
+  }
+
+  .section-title{
+    text-align:center;
+    font-size:2.2rem;
+    color:var(--navy);
+    margin-bottom:3rem;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3.5rem;
+    align-items:center;
+  }
+
+  .about-grid p{ color:var(--ink-soft); margin-bottom:1rem; }
+  .about-grid p strong{ color:var(--navy); }
+
+  .about-image-wrapper{
+    background:var(--paper-dim);
+    width:100%;
+    aspect-ratio:4/3;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 18px 40px -20px rgba(20,35,63,0.35);
+  }
+
+  .about-image-wrapper img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+  }
+
+  /* ---------- Mission ---------- */
+  .mission{
+    background:var(--paper-dim);
+    width:100%;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .mission-inner{ max-width:1200px; margin:0 auto; }
+  .mission-content{ text-align:center; }
+  .mission-content > p{ color:var(--ink-soft); }
+
+  .mission-list{
+    list-style:none;
+    text-align:left;
+    max-width:620px;
+    margin:2.2rem auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+  }
+
+  .mission-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:0.9rem;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  .mission-list .mark{
+    flex:none;
+    width:26px; height:26px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--navy-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.8rem;
+    font-weight:700;
+  }
+
+  /* ---------- Registration ---------- */
+  .reg-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+    margin-bottom:3rem;
+  }
+
+  .reg-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--navy);
+    border-radius:6px;
+    padding:2rem 2.2rem;
+  }
+
+  .reg-card h3{ font-size:1.05rem; margin-bottom:1.2rem; }
+
+  .reg-card dl div{
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    padding:0.6rem 0;
+    border-bottom:1px dashed var(--line);
+  }
+
+  .reg-card dl div:last-child{ border-bottom:none; }
+
+  .reg-card dt{
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    flex:none;
+    width:42%;
+  }
+
+  .reg-card dd{
+    font-weight:600;
+    font-size:0.92rem;
+    text-align:right;
+    color:var(--navy);
+  }
+
+  .leadership{
+    background:var(--paper-dim);
+    border-radius:8px;
+    padding:2.6rem 2.4rem;
+    border:1px solid var(--line);
+  }
+
+  .leadership-title{
+    font-size:1.2rem;
+    margin-bottom:1.6rem;
+    text-align:center;
+  }
+
+  .leadership-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:1.4rem;
+    margin-bottom:1.8rem;
+  }
+
+  .leader-card{
+    background:#fff;
+    border-radius:6px;
+    padding:1.4rem 1.3rem;
+    border:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    gap:0.35rem;
+    text-align:center;
+  }
+
+  .leader-card.founder{
+    border:1px solid var(--gold);
+    background:linear-gradient(180deg, #fff, var(--paper-dim));
+  }
+
+  .leader-card .role{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    font-weight:600;
+  }
+
+  .leader-card .name{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    color:var(--navy);
+  }
+
+  .members-row{
+    text-align:center;
+    padding-top:1.2rem;
+    border-top:1px solid var(--line);
+  }
+
+  .members-label{
+    display:block;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin-bottom:0.5rem;
+    font-weight:600;
+  }
+
+  .members-list{
+    color:var(--ink);
+    font-size:0.92rem;
+    line-height:1.9;
+  }
+
+  /* ---------- Modals ---------- */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(12,24,48,0.72);
+    backdrop-filter:blur(3px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    z-index:2000;
+  }
+
+  .modal-overlay[hidden]{ display:none; }
+
+  .modal-card{
+    position:relative;
+    background:var(--paper);
+    border-radius:8px;
+    max-width:760px;
+    width:100%;
+    max-height:85vh;
+    overflow-y:auto;
+    padding:3rem 2.6rem 2.6rem;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,0.5);
+    border-top:4px solid var(--gold);
+  }
+
+  .modal-title{
+    text-align:left;
+    font-size:1.8rem;
+    margin-bottom:2rem;
+  }
+
+  .modal-close{
+    position:absolute;
+    top:1.1rem;
+    right:1.1rem;
+    width:36px; height:36px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--navy);
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background 0.2s, color 0.2s;
+  }
+
+  .modal-close:hover{ background:var(--navy); color:#fff; }
+
+  .modal-card .leadership-grid{ margin-bottom:1.8rem; }
+
+  .modal-card .members-row{ border-top:1px solid var(--line); padding-top:1.2rem; }
+
+  @media (max-width:640px){
+    .modal-card{ padding:2.4rem 1.4rem 2rem; }
+    .reg-grid{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- Impact ---------- */
+  .impact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:2rem;
+  }
+
+  .impact-card{
+    background:#fff;
+    border-radius:6px;
+    padding:2.4rem 2rem;
+    text-align:left;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    transition:transform 0.3s, box-shadow 0.3s;
+  }
+
+  .impact-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px -24px rgba(20,35,63,0.3);
+  }
+
+  .impact-icon{
+    font-size:2rem;
+    margin-bottom:1.1rem;
+  }
+
+  .impact-card h3{ font-size:1.2rem; margin-bottom:0.6rem; }
+  .impact-card p{ color:var(--ink-soft); font-size:0.98rem; }
+
+  /* ---------- CSR Partnership ---------- */
+  .csr-section-wrapper{
+    background:
+      radial-gradient(circle at 85% 30%, rgba(198,145,43,0.16), transparent 50%),
+      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 100%);
+    width:100%;
+  }
+
+  .csr-section{ color:#fff; text-align:center; }
+  .csr-section .eyebrow-small{ color:var(--gold-light); }
+  .csr-section .section-title{ color:#fff; }
+
+  .csr-text{
+    max-width:680px;
+    margin:0 auto 2.6rem;
+    font-size:1.1rem;
+    color:rgba(251,247,239,0.82);
+  }
+
+  .csr-stats{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:2rem;
+    max-width:760px;
+    margin:0 auto 2.8rem;
+  }
+
+  .csr-stats div{ border-left:1px solid rgba(230,200,140,0.25); padding-left:1.2rem; text-align:left; }
+  .csr-stats .num{ font-family:'Fraunces', serif; font-size:2.1rem; color:var(--gold-light); display:block; }
+  .csr-stats .label{ font-size:0.85rem; color:rgba(251,247,239,0.7); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy-deep);
+    color:var(--paper);
+    padding:3.5rem 2rem 2.5rem;
+    text-align:center;
+    border-top:1px solid rgba(230,200,140,0.15);
+  }
+
+  .footer-content{ max-width:1200px; margin:0 auto; }
+
+  .footer-content .footer-name{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    color:var(--gold-light);
+    margin-bottom:0.6rem;
+  }
+
+  .footer-links{
+    display:flex;
+    gap:1.8rem;
+    justify-content:center;
+    margin:1.4rem 0;
+    flex-wrap:wrap;
+  }
+
+  .footer-links a{
+    color:rgba(251,247,239,0.75);
+    text-decoration:none;
+    font-size:0.92rem;
+  }
+
+  .footer-links a:hover{ color:var(--gold-light); }
+
+  .footer-content p.fine{
+    opacity:0.55;
+    font-size:0.82rem;
+    margin-top:1.4rem;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:768px){
+    body{ padding-top:64px; }
+    .nav-container{ flex-direction:column; gap:0.9rem; padding:0.7rem 1.2rem; }
+    nav ul{ gap:1.2rem; flex-wrap:wrap; justify-content:center; }
+    .hero{ padding:4rem 1.5rem; }
+    .hero h1{ font-size:2.1rem; }
+    .about-grid{ grid-template-columns:1fr; }
+    .csr-stats{ grid-template-columns:1fr; }
+    section{ padding:3.5rem 1.5rem; }
+  }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <!-- Swapped plain text placeholder with structured image logo setup -->
-                <img src="logo.png" alt="Sri Balakrishna Charitable Trust Logo" /* Update your wrapper styles to remove fixed height limits */
-.about-image-wrapper {
-    background: #e0e0e0; 
-    width: 100%; /* Spans full grid column width */
-    height: auto; /* Changed from 300px */
-    border-radius: 8px; 
-    overflow: hidden;
-}
 
-.about-image-wrapper img {
-    width: 100%;
-    height: 100%; /* Changed from 100% */
-    display: block;
-}>
-
-                <span style="display:none;">Sri Balakrishna Charitable Trust</span>
-            </a>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#mission">Our Mission</a></li>
-                <li><a href="#impact">Impact Areas</a></li>
-                <li><a href="#csr" class="cta-button" style="padding: 0.5rem 1.5rem;">Partner With Us</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Making a Difference Together</h1>
-        <p>We're committed to creating sustainable social impact through community development, education, and environmental conservation.</p>
-        <a href="#csr" class="cta-button">Become Our CSR Partner</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Us</h2>
-        <div class="about-grid">
-            <div>
-                <p><strong>Sri Balakrishna Charitable Trust</strong> is a registered charitable trust dedicated to improving lives through meaningful community initiatives. Operating in Bangalore, we work tirelessly to empower communities, support education, and promote environmental sustainability.</p>
-                <br>
-                <p>Our mission extends beyond charity - we build lasting partnerships with organizations and individuals who share our vision of a better world.</p>
-            </div>
-            <div class="about-image-wrapper">
-                <img src="sribalakrishnacharitabletrust.jpg" alt="Sri Balakrishna Charitable Trust Community Project Blueprint" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <div class="mission">
-        <section class="mission-inner" id="mission">
-            <h2 class="section-title">Our Mission</h2>
-            <div class="mission-content">
-                <p>We believe in creating measurable, sustainable impact through:</p>
-                <br>
-                <ul style="list-style: none; text-align: left; max-width: 600px; margin: 0 auto;">
-                    <li style="margin-bottom: 1rem;">✅ Empowering communities with access to quality education</li>
-                    <li style="margin-bottom: 1rem;">✅ Supporting healthcare initiatives for underserved populations</li>
-                    <li style="margin-bottom: 1rem;">✅ Promoting environmental conservation and sustainability</li>
-                    <li style="margin-bottom: 1rem;">✅ Building infrastructure that serves vulnerable communities</li>
-                </ul>
-            </div>
-        </section>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,8 92,86 8,86" fill="none" stroke="#C6912B" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="50" cy="58" r="20" fill="#C6912B"/>
+            <circle cx="50" cy="58" r="20" fill="none" stroke="#14233F" stroke-width="1.5"/>
+            <path d="M50 44 C53 50 53 54 50 57 C47 54 47 50 50 44Z" fill="#8A3A34"/>
+            <path d="M38 60 Q50 70 62 60 Q58 66 50 66 Q42 66 38 60Z" fill="#14233F"/>
+          </svg>
+        </span>
+        <span>Sri Bala-krishna Charitable Trust</span>
+      </a>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#impact">Impact Areas</a></li>
+        <li><a href="#" data-modal-open="registration-modal">Registration</a></li>
+        <li><a href="#" data-modal-open="leadership-modal">Leadership</a></li>
+        <li><a href="#csr" class="cta-button">Partner With Us</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Impact Areas Section -->
-    <section id="impact">
-        <h2 class="section-title">Our Impact Areas</h2>
-        <div class="impact-grid">
-            <div class="impact-card">
-                <div class="impact-icon">📚</div>
-                <h3>Education Support</h3>
-                <p>Providing scholarships, learning materials, and educational infrastructure to underprivileged children.</p>
-            </div>
-            <div class="impact-card">
-                <div class="impact-icon">💧</div>
-                <h3>Water & Sanitation</h3>
-                <p>Building clean water access and sanitation facilities in rural communities.</p>
-            </div>
-            <div class="impact-card">
-                <div class="impact-icon">🌱</div>
-                <h3>Environmental Conservation</h3>
-                <p>Promoting sustainable green coverage, waste recycling initiatives, and community afforestation programs.</p>
-            </div>
+  <!-- Hero -->
+  <section class="hero">
+    <span class="eyebrow">Regd. No. HLS-4-00364-2013-14 · Cox Town, Bengaluru</span>
+    <h1>Sri Bala-krishna Charitable Trust</h1>
+    <p>A registered charitable trust based in Bengaluru, committed to community development, education, and environmental conservation.</p>
+    <a href="#csr" class="cta-button">Become Our CSR Partner</a>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <span class="eyebrow-small" style="text-align:left; display:block;">Who We Are</span>
+    <h2 class="section-title" style="text-align:left; margin-bottom:2.5rem;">About Us</h2>
+    <div class="about-grid">
+      <div>
+        <p><strong>Sri Bala-krishna Charitable Trust (Regd.)</strong> is a registered charitable trust founded in 2013 and based at Cox Town, Bengaluru. The trust was established with a vision to empower communities, support education, and promote environmental sustainability.</p>
+        <p>Our mission extends beyond charity — we build lasting partnerships with organizations and individuals who share our vision of a better world.</p>
+      </div>
+      <div class="about-image-wrapper" style="background:var(--navy-deep); display:flex; align-items:center; justify-content:center; padding:2rem;">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:78%; height:auto;">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="#E4B85C" stroke-width="1.5"/>
+          <polygon points="100,20 176,168 24,168" fill="none" stroke="#E4B85C" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="100" cy="112" r="34" fill="#C6912B"/>
+          <circle cx="100" cy="112" r="34" fill="none" stroke="#14233F" stroke-width="2"/>
+          <path d="M100 84 C107 96 107 104 100 110 C93 104 93 96 100 84Z" fill="#8A3A34"/>
+          <path d="M76 116 Q100 136 124 116 Q116 128 100 128 Q84 128 76 116Z" fill="#14233F"/>
+          <path id="arcTopAbout" d="M 20,100 A 80 80 0 1 1 180,100" fill="none"/>
+          <text font-family="Fraunces, serif" font-size="12.5" font-weight="600" fill="#FBF7EF" letter-spacing="1.8">
+            <textPath href="#arcTopAbout" startOffset="50%" text-anchor="middle">SRI BALA-KRISHNA CHARITABLE TRUST</textPath>
+          </text>
+          <text x="100" y="182" font-family="Work Sans, sans-serif" font-size="10" font-weight="600" fill="#E4B85C" text-anchor="middle" letter-spacing="1.5">(REGD.) · EST. 2013</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Mission -->
+  <div class="mission">
+    <section class="mission-inner" id="mission">
+      <span class="eyebrow-small">What Drives Us</span>
+      <h2 class="section-title">Our Mission</h2>
+      <div class="mission-content">
+        <p>We believe in creating measurable, sustainable impact through:</p>
+        <ul class="mission-list">
+          <li><span class="mark">✓</span> Empowering communities with access to quality education</li>
+          <li><span class="mark">✓</span> Supporting healthcare initiatives for underserved populations</li>
+          <li><span class="mark">✓</span> Promoting environmental conservation and sustainability</li>
+          <li><span class="mark">✓</span> Building infrastructure that serves vulnerable communities</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Impact Areas -->
+  <section id="impact">
+    <span class="eyebrow-small">Where We Work</span>
+    <h2 class="section-title">Our Impact Areas</h2>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-icon">📚</div>
+        <h3>Education Support</h3>
+        <p>Focus area: scholarships, learning materials, and educational infrastructure for underprivileged children.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">💧</div>
+        <h3>Water &amp; Sanitation</h3>
+        <p>Focus area: clean water access and sanitation facilities for rural communities.</p>
+      </div>
+      <div class="impact-card">
+        <div class="impact-icon">🌱</div>
+        <h3>Environmental Conservation</h3>
+        <p>Focus area: green coverage, waste recycling initiatives, and community afforestation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSR Partnership -->
+  <div class="csr-section-wrapper">
+    <section class="csr-section" id="csr">
+      <span class="eyebrow-small">Corporate Social Responsibility</span>
+      <h2 class="section-title">Partner With Us</h2>
+      <p class="csr-text">Align your organization's CSR mandate with a registered trust (Regd. No. HLS-4-00364-2013-14) working in education, healthcare access, water &amp; sanitation, and environmental sustainability. We welcome conversations with corporate partners looking to design CSR programs together.</p>
+      <a href="#contact" class="cta-button">Start a Partnership Conversation</a>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="footer-name">Sri Bala-krishna Charitable Trust (Regd.)</div>
+      <div class="footer-links">
+        <a href="#about">About Us</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#impact">Impact Areas</a>
+        <a href="#csr">CSR Partnership</a>
+      </div>
+      <p class="fine">© 2026 Sri Bala-krishna Charitable Trust (Regd.) · HLS-4-00364-2013-14 · Cox Town, Bengaluru. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Registration Modal -->
+  <div class="modal-overlay" id="registration-modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="registration-modal-title">
+      <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+      <span class="eyebrow-small" style="text-align:left;">Legal Standing</span>
+      <h2 id="registration-modal-title" class="modal-title">Registration Details</h2>
+      <div class="reg-grid">
+        <div class="reg-card">
+          <h3>Trust Registration</h3>
+          <dl>
+            <div><dt>Registration No.</dt><dd>HLS-4-00364-2013-14</dd></div>
+            <div><dt>Date of Registration</dt><dd>11 October 2013</dd></div>
+            <div><dt>Registered Address</dt><dd>#66, Gover Road, Cox Town, Bangalore – 560 005, Karnataka, India</dd></div>
+          </dl>
         </div>
+        <div class="reg-card">
+          <h3>Contact</h3>
+          <dl>
+            <div><dt>Telephone</dt><dd>+91 80 4132 2647 / 8549 8051 59</dd></div>
+            <div><dt>Mobile</dt><dd>+91 94481 07035</dd></div>
+            <div><dt>Email</dt><dd>beekaytrust@gmail.com</dd></div>
+            <div><dt>Website</dt><dd>www.balakrishnatrust.com</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leadership Modal -->
+  <div class="modal-overlay" id="leadership-modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="leadership-modal-title">
+      <button type="button" class="modal-close" data-modal-close aria-label="Close">&times;</button>
+      <span class="eyebrow-small" style="text-align:left;">Governance</span>
+      <h2 id="leadership-modal-title" class="modal-title">Trust Leadership</h2>
+      <div class="leadership-grid">
+        <div class="leader-card founder">
+          <span class="role">Founder &amp; Managing Trustee</span>
+          <span class="name">Sri Prabhakar Balakrishna</span>
+        </div>
+        <div class="leader-card">
+          <span class="role">Trustee</span>
+          <span class="name">Smt. Kalpana Prabhakar</span>
+        </div>
+        <div class="leader-card">
+          <span class="role">Trustee</span>
+          <span class="name">Smt. Chaitra Prabhakar</span>
+        </div>
+        <div class="leader-card">
+          <span class="role">Advisor</span>
+          <span class="name">Dr. Sri Vijaya</span>
+        </div>
+      </div>
+      <div class="members-row">
+        <span class="members-label">Members</span>
+        <span class="members-list">Smt. Prasanna · Sri Rathna Kumar Aleti · Smt. Nagajyoti Raghunath Siriyala · Kumari Namratha Balarama Reddy</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var openLinks = document.querySelectorAll('[data-modal-open]');
+      var closeEls = document.querySelectorAll('[data-modal-close]');
+      var overlays = document.querySelectorAll('.modal-overlay');
+      var lastFocused = null;
+
+      function openModal(id){
+        var modal = document.getElementById(id);
+        if(!modal) return;
+        lastFocused = document.activeElement;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        var closeBtn = modal.querySelector('.modal-close');
+        if(closeBtn) closeBtn.focus();
+      }
+
+      function closeModal(modal){
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if(lastFocused) lastFocused.focus();
+      }
+
+      openLinks.forEach(function(link){
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          openModal(link.getAttribute('data-modal-open'));
+        });
+      });
+
+      closeEls.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          closeModal(btn.closest('.modal-overlay'));
+        });
+      });
+
+      overlays.forEach(function(overlay){
+        overlay.addEventListener('click', function(e){
+          if(e.target === overlay) closeModal(overlay);
+        });
+      });
+
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+          overlays.forEach(function(overlay){
+            if(!overlay.hidden) closeModal(overlay);
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
